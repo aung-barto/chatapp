@@ -1,5 +1,5 @@
 var net = require('net');
-var key = /[yell]/;
+
 var client = net.Socket();
 client.connect(3000, function() {
   	console.log('Client1 Connected to Server.');
@@ -22,3 +22,4 @@ client.connect(3000, function() {
 	    console.log('Client1 disconnected from server');
 	});
 });
+

@@ -16,9 +16,18 @@ var server = net.createServer(function(socket) {
  	socket.on('data', function(data) {
 
  		var message = data.toString().trim();
- 		if (message === 'yell') {
+ 		var messArray = message.split(" ");
+ 		console.log(messArray);
+ 		if (messArray.length < 1) {
 			broadcast(socket.name + ' AHHHH!!!!' + '\n',socket);
  		}
+ 		else {
+ 			var shifted = messArray.shift();
+ 			var messUp = messArray.toString().toUpperCase();
+ 			broadcast(socket.name + ' ' + messUp + '\n',socket);
+ 		}
+ 		
+
 		
 	 });
 
